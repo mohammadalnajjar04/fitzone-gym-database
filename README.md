@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏋️‍♂️ FitZone Gym Management System
+# 🏋️ FitZone Gym Management System
 
 **A robust, scalable PostgreSQL database solution for managing modern fitness centers.**
 
@@ -18,36 +18,22 @@
 
 ---
 
-## 📐 Entity-Relationship Diagram (ERD)
+## 📐 Database Architecture & Diagrams
 
-Below is the structural schema representing the database design, tables, primary keys, foreign keys, and relational cardinalities:
+### 1. Conceptual Entity-Relationship Diagram (ERD)
+![Entity Relationship Diagram](fitzone_erd.png)
 
-<div align="center">
-
-![FitZone ERD](Schema_Diagram.png)
-
-</div>
-
----
-
-## ✨ Key Features & Technical Highlights
-
-* **📑 Structured Architecture (DDL):** Normalized tables enforcing strict data integrity via `PRIMARY KEY`, `FOREIGN KEY`, `CHECK`, and `UNIQUE` constraints.
-* **🔄 Advanced Relational Modeling:**
-  * **1:N & N:M Relationships:** Seamless linking between members, packages, trainers, and classes.
-  * **Self-Referential Mentorship:** Implemented a self-referencing relationship within the Trainers table to model senior-junior mentorship structures.
-* **🔍 Complex SQL Queries:**
-  * Multi-table `JOIN` operations for aggregated reporting.
-  * Analytical queries using aggregate functions (`COUNT`, `AVG`, `SUM`) paired with `GROUP BY` and `HAVING` clauses.
-  * Subqueries and conditional filtering.
-* **⚡ Performance Optimization:** Applied strategic **B-Tree Indexing** on high-frequency search columns (e.g., Member Emails, Booking Dates) to enhance query execution performance.
-* **🔐 Data Control & Security (DCL):** Configured Role-Based Access Control (RBAC) establishing specific privileges for `DBA_Role`, `Trainer_Role`, and `Member_Role`.
+### 2. Relational Database Schema
+![Relational Schema](fitzone_schema.png)
 
 ---
 
 ## 📂 Repository Structure
 
 ```text
-├── fitzone_assignment.sql   # Full SQL script (DDL, DML, DCL, Queries & Indexing)
-├── Schema_Diagram.png       # ERD / Database visual schema
+fitzone-gym-database/
+│
+├── fitzone_database.sql     # Complete PostgreSQL database script (DDL & DML)
+├── fitzone_erd.png          # Conceptual Entity-Relationship Diagram
+├── fitzone_schema.png       # Detailed Relational Database Schema
 └── README.md                # Project documentation
